@@ -67,7 +67,7 @@ local function switchAnimations(c)
 	end
 end
 
-if ch then
+if ch then 
 	switchAnimations(ch)
 end
 
