@@ -40,7 +40,7 @@
 
 
 
-repeat game:GetService'RunService'.RenderStepped:Wait() until game.Players.LocalPlayer.Character
+repeat game:GetService'RunService'.RenderStepped:Wait() until game.Players.LocalPlayer
 
 local bundleDetails = game:GetService'AssetService':GetBundleDetailsAsync(_G.BundleID)
 
