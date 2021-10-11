@@ -40,12 +40,11 @@
 
 
 
-
+repeat game:GetService'RunService'.RenderStepped:Wait() until game.Players.LocalPlayer.Character
 
 local bundleDetails = game:GetService'AssetService':GetBundleDetailsAsync(_G.BundleID)
 
-local ch = nil
-repeat game:GetService'RunService'.RenderStepped:Wait() ch = game.Players.LocalPlayer.Character until game.Players.LocalPlayer.Character
+local ch = game.Players.LocalPlayer.Character
 
 local function switchAnimations(c)
 	local animations = c:WaitForChild'Animate':GetDescendants()
