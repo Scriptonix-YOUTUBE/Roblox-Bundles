@@ -1,0 +1,76 @@
+--[[
+    Made by timothytheawesome (Scriptonix#6957)
+    Please give me credit if you use this in something.
+--]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local bundleDetails = game:GetService'AssetService':GetBundleDetailsAsync(_G.BundleID)
+
+local ch = game.Players.LocalPlayer.Character
+
+local function switchAnimations(c)
+	local animations = c:WaitForChild'Animate':GetDescendants()
+	for _, v in pairs(animations) do
+		if v:IsA'Animation' then
+			for _, b in pairs(bundleDetails.Items) do
+				if string.lower(v.Name) == 'idle' then
+					local Id = 'rbxassetid://' .. b.Id
+					local animation = game:GetObjects(Id)[1]
+					local idle = v.Parent
+					idle:WaitForChild'Animation1'.AnimationId = animation:FindFirstDescendant('Animation1').AnimationId
+					idle:WaitForChild'Animation2'.AnimationId = animation:FindFirstDescendant('Animation2').AnimationId
+				elseif string.find(string.lower(b.Name),string.lower(v.Parent.Name)) then
+					local Id = 'rbxassetid://' .. b.Id
+					local animation = game:GetObjects(Id)[1]
+					v.AnimationId = animation:FindFirstChildWhichIsA('Animation',true).AnimationId
+				end
+			end
+		end
+	end
+end
+
+if ch then
+	switchAnimations(ch)
+end
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function(c)
+	switchAnimations(c)
+end)
