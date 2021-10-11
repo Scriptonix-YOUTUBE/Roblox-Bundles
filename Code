@@ -45,6 +45,7 @@
 local bundleDetails = game:GetService'AssetService':GetBundleDetailsAsync(_G.BundleID)
 
 local ch = game.Players.LocalPlayer.Character
+repeat ch = game.Players.LocalPlayer.Character until game.Players.LocalPlayer.Character
 
 local function switchAnimations(c)
 	local animations = c:WaitForChild'Animate':GetDescendants()
