@@ -48,7 +48,7 @@ local ch = game.Players.LocalPlayer.Character
 
 local function switchAnimations(c)
 	local hum = c:WaitForChild'Humanoid'
-	if hum.RigType == enum.RigType.R15 then
+	if hum.RigType == Enum.RigType.R15 then
 	    local animations = c:WaitForChild'Animate':GetDescendants()
 	    for _, v in pairs(animations) do
 	        	if v:IsA'Animation' then
