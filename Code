@@ -47,8 +47,8 @@ local bundleDetails = game:GetService'AssetService':GetBundleDetailsAsync(_G.Bun
 local ch = game.Players.LocalPlayer.Character
 
 local function switchAnimations(c)
-        wait()
 	local hum = c:WaitForChild'Humanoid'
+	wait(2)
 	if hum.RigType == Enum.HumanoidRigType.R15 then
 	    local animations = c:WaitForChild'Animate':GetDescendants()
 	    for _, v in pairs(animations) do
